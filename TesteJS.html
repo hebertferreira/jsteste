@@ -1,0 +1,67 @@
+<html>
+<head>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+
+<style type="text/css">
+	.caixinha{
+		background-color:yellow;
+		width:100px; 
+		height:100px;
+		display: inline-flex;
+		cursor: pointer;
+	}
+</style>
+
+<div id="div-menu" style="display:none;">
+
+<blockquote class="caixinha"> </blockquote>
+<blockquote class="caixinha"> </blockquote>
+<blockquote class="caixinha"> </blockquote>
+<blockquote class="caixinha"> </blockquote>
+	
+</div>
+
+<br />
+<br />
+
+	<button id="mostrar">
+
+	Mostar
+		
+	</button>
+
+
+
+</body>
+
+<script type="text/javascript">
+	
+	$('#mostrar').on('click', function(e){
+
+		$('#div-menu').show('fast');
+		e.stopPropagation();
+	});
+
+	$('#div-menu').on('click', function(e){
+		
+		$('#div-menu').show();
+		e.stopPropagation();
+	});
+
+	$('body').on('click', function(){
+
+		$('#div-menu').hide('slow');
+	});
+
+	$('.caixinha').on('click', function(){	
+		//$(this).css('visibility','hidden');
+		$(this).remove();
+		alert($('.caixinha').size());
+	});
+
+
+</script>
+
+</html>
